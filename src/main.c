@@ -248,7 +248,8 @@ static void check_dfu_mode(void) {
 
   /*------------- Determine DFU mode (Serial, OTA, FRESET or normal) -------------*/
   // DFU button pressed
-  dfu_start = dfu_start || button_pressed(BUTTON_DFU);
+  //dfu_start = dfu_start || button_pressed(BUTTON_DFU);
+  _ota_dfu = _ota_dfu || button_pressed(BUTTON_DFU);
 
   // DFU + FRESET are pressed --> OTA
   _ota_dfu = _ota_dfu || (button_pressed(BUTTON_DFU) && button_pressed(BUTTON_FRESET));
